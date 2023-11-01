@@ -1,0 +1,88 @@
+
+// bảng users dùng để lưu thông tin giảng viên đăng nhập vào
+users { 
+	id integer pk increments unique
+	email string unique
+	name string
+	is_admin boolean def(0)
+	password string
+	created_at timestamp // Xác định bản ghi được tạo vào thời điểm nào
+	updated_at timestamp // Xác định bản ghi được chỉnh sửa vào thời điểm nào
+}
+
+// bảng spring_blocks dùng để lưu thông tin của 1 kỳ thi (blocks)
+spring_blocks {
+	id integer pk increments unique
+	creator_id integer *> users.id // khoá ngoại tới bảng users. Định danh người dùng nào tạo ra bản ghi dữ liệu này
+	name string
+	created_at timestamp // Xác định bản ghi được tạo vào thời điểm nào
+	updated_at timestamp // Xác định bản ghi được chỉnh sửa vào thời điểm nào
+}
+
+// bảng lưu thông tin môn học
+subjects {
+	id integer pk increments unique
+	creator_id integer *> users.id // khoá ngoại tới bảng users. Định danh người dùng nào tạo ra bản ghi dữ liệu này
+	name string
+	created_at timestamp // Xác định bản ghi được tạo vào thời điểm nào
+	updated_at timestamp // Xác định bản ghi được chỉnh sửa vào thời điểm nào
+}
+
+// bảng lưu thông tin các ca thi
+examinations {
+	id integer pk increments unique
+	creator_id integer *> users.id // khoá ngoại tới bảng users. Định danh người dùng nào tạo ra bản ghi dữ liệu này
+	subject_id integer *> subjects.id
+	spring_block_id integer *> spring_blocks.id
+	start_date timestamp // Ngày thi
+	order integer // Ca thi
+	room_code string // Phòng thi
+	class_code string // Lớp
+	created_at timestamp // Xác định bản ghi được tạo vào thời điểm nào
+	updated_at timestamp // Xác định bản ghi được chỉnh sửa vào thời điểm nào
+}
+
+// bảng lưu bộ đề thi cho các môn học theo từng block
+subject_medias {
+	id integer pk increments unique
+	creator_id integer *> users.id // khoá ngoại tới bảng users. Định danh người dùng nào tạo ra bản ghi dữ liệu này
+	subject_id integer *> subjects.id
+	spring_block_id integer *> spring_blocks.id
+	name string // Đề 1, đề 2, đề 3, ..
+	path_save string // Đường dẫn lưu đề
+	created_at timestamp // Xác định bản ghi được tạo vào thời điểm nào
+	updated_at timestamp // Xác định bản ghi được chỉnh sửa vào thời điểm nào
+}
+
+// bảng lưu sắp xếp đề vào các ca thi
+examination_medias {
+	id integer pk increments unique
+	creator_id integer *> users.id // khoá ngoại tới bảng users. Định danh người dùng nào tạo ra bản ghi dữ liệu này
+	examination_id integer *> examinations.id
+	subject_media_id integer *> subject_medias.id
+	created_at timestamp // Xác định bản ghi được tạo vào thời điểm nào
+	updated_at timestamp // Xác định bản ghi được chỉnh sửa vào thời điểm nào
+}
+
+// bảng lưu dữ liệu giám thi coi thi của các ca thi
+examination_teachers {
+	id integer pk increments unique
+	creator_id integer *> users.id // khoá ngoại tới bảng users. Định danh người dùng nào tạo ra bản ghi dữ liệu này
+	spring_block_id integer *> spring_blocks.id
+	examination_id integer *> examinations.id
+	teacher_code string // lưu tiền tố email của các giám thị, chưa liên kết vào bảng users, vì có thể lúc khởi tạo dữ liệu, giảng viên chưa thực hiện đăng nhập vào hệ thống
+	order integer // vị trí sắp xếp của giám thị ( 1, 2, 3 )
+	created_at timestamp // Xác định bản ghi được tạo vào thời điểm nào
+	updated_at timestamp // Xác định bản ghi được chỉnh sửa vào thời điểm nào
+}
+
+// bảng lưu lịch sử tải đề của giám thị
+examination_histories {
+	id integer pk increments unique
+	download_id integer *> users.id
+	examination_id integer *> examinations.id
+	examination_media_id integer *> examination_medias.id
+	created_at timestamp // Xác định bản ghi được tạo vào thời điểm nào
+	updated_at timestamp // Xác định bản ghi được chỉnh sửa vào thời điểm nào
+}
+
