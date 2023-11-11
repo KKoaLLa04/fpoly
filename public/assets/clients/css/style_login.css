@@ -1,0 +1,69 @@
+
+*{
+    margin: 0;
+}
+body{
+    height: 700px;
+    background-color: #cccccc5c;
+}
+.boxlogin{
+    width: 500px;
+    height: 100%;
+    margin: 20px auto;
+    border: 1px solid #ccccccc7;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+}
+.logo{
+    width: 55%;
+    height: 100px;
+}
+.logo >img{
+    width: 100%;
+    height: 100%;
+}
+form{
+    margin-top: 20px;
+    width: 70%;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+form select{
+    width: 100%;
+    border-radius: 5px;
+    padding: 4px;
+}
+form >div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    height: 18px;
+}
+form >div>div{
+    border: 1px solid #ccc;
+    width: 38%;
+}
+form >button{
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+
+    background-color: #FD397A;
+}
+form >button>a{
+    padding-right: 137px;
+    padding-top: 5px;
+    padding-left: 137px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    color: white;
+}

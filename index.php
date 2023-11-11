@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once './configs/database.php'; //Load database connection
 require_once './configs/web.php'; // load config web
 

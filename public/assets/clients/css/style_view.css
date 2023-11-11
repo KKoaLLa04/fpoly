@@ -1,0 +1,232 @@
+*{
+    margin: 0px ;
+   }
+   .container{
+       position: fixed;
+       top: 0;
+       left: 0px;
+       width: 100%;
+       height: 100%;
+       display: flex;
+   }
+   .home_boxleft{
+       background-color: white;
+       height: 100%;
+       width: 290px;
+       box-shadow: 5px -5px 5px rgba(0, 0, 0, 0.101);
+  
+
+   }
+   .home_boxleft .logo{
+       width: 85%;
+       height: 100px;
+       margin: 10px auto;
+   }
+   .home_boxleft .logo >img{
+       height: 100%;
+       width: 100%;
+   }
+   .home_boxleft_menu{
+       width: 100%;
+       
+   }
+   .home_boxleft_menu .muc{
+       border-bottom: 2px solid rgba(0, 128, 0, 0.529);
+       width: 100%;
+       height: auto;
+       padding-bottom: 20px;
+   
+   }
+   .home_boxleft_menu .name_muc{
+       font-size: 21px;
+       padding-top: 20px;
+       padding-left: 10px;
+       padding-bottom: 20px;
+       position: relative;
+       color: rgba(0, 0, 0, 0.742);
+   }
+   
+   .home_boxleft_menu .muc >a .muc_con{
+       font-size: 18px;
+       padding: 10px;
+   }
+   .home_boxleft_menu .muc >a{
+       text-decoration: none;
+       color: black;
+   }
+   .home_boxleft_menu >a .muc_con{
+       padding: 10px;
+       font-size: 20px;
+   }
+   .home_boxleft_menu .muc_con:hover{
+       background-color: aqua;
+       color: rgba(0, 0, 0, 0.513);
+   }
+   .home_boxright{
+       width: 100%;
+
+   }
+   .home_boxright_account{
+       background-color: white;
+       box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.101);
+
+       height: 50px;
+       width: 100% ;
+       display: flex;
+       justify-content: right;
+       align-items: center;
+   }
+   .home_boxright_account >a{
+       text-decoration: none;
+       color: black;
+       margin-left: 10px;
+       margin-right: 10px;
+   }
+   .home_boxright_account >a .account{
+       display: flex;
+       width: 90px;
+       justify-content: space-between;
+   }
+   .home_boxright_account >a .account >i{
+      color: rgb(92, 92, 240);
+   }
+   .home_boxright_account_namemuc{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.101);
+    background-color: white;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.17);
+       width: 100%;
+       border-bottom: 1px solid rgba(0, 0, 0, 0.17);
+   }
+   .home_boxright_account_namemuc>p{
+      font-size: 20px;
+      padding: 10px;
+      padding-left: 20px;
+   }
+   
+   .home_boxcontent{
+      width: auto;
+      height: auto;
+      margin-left: 260px;
+      margin-top: 120px;
+   }
+   
+   /* Trang con lịch sắp thi */
+   .home_boxright_boxbotom{
+    
+       margin-left: 2%;
+   }
+   .title_boxright_botom {
+       background-color: #FFFFCC;
+       width: 97%;
+       border-radius: 10px ;
+       margin: 15px;
+       float: left;
+   }
+   /* .title_boxright_botom h2 {
+       margin-left: 2%;
+   } */
+   .table_boxright_botom table tr th{
+       color:#364d67 ;
+       /* background-color: #f1f7fd; */
+       background-color: #f1f7fd;
+       padding: 10px 46px;
+   }
+   .table_boxright_botom table tr td{
+       border-top: 1px solid rgb(141, 152, 163);
+       padding: 10px 46px;
+   }
+   .table_boxright_botom table tr a{
+       font-size: 14px;
+       text-decoration: none;
+   }
+   
+   /* Upfile kế hoạch thi */
+   .home_boxright_upfile{
+       margin-top: 40px;
+       margin-left: 2%;
+   }
+   .home_boxright_upfile h4{
+       margin-top: 8px;
+       margin-left: 2%;
+   }
+   .home_boxright_upfile h3{
+       font-size: 15px;
+       background-color: #1E90FF;
+       width: 80px;
+       height: 20px;
+       line-height: 20px;
+       color: white;
+       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       margin-top: -25px;
+       margin-left: 300px;
+       padding: 5px 10px;
+   }
+   .input_file input{
+       margin-left: 1%;
+   }
+   .home_boxright_upfile h3 a{
+       text-decoration: none;
+   }
+   
+   /* Kế hoạch thi */
+   .home_boxright_ke_hoachThi{
+       width: auto;
+
+   }
+   .home_boxright_ke_hoachThi table{
+       width: 96%;
+       margin: 2%;
+   }
+   .home_boxright_ke_hoachThi table tr td{
+       /* background-color: #B0E2FF;
+       padding: 20px 100px; */
+      text-align: center;
+   }
+   .home_boxright_ke_hoachThi table tr th{
+       /* background-color:#D7D7D7;
+       padding: 20px 100px; */
+      text-align: center;
+   } 
+   .home_boxright_ke_hoachThi table td:nth-child(1){
+       width: 10%;padding: 20px 80px;
+       background-color: #B0E2FF;
+   }
+   .home_boxright_ke_hoachThi table td:nth-child(2){
+       width: 45%;padding: 20px 80px;
+       background-color: #B0E2FF;
+   }
+   .home_boxright_ke_hoachThi table td:nth-child(3){
+       width: 25%;padding: 20px 80px;
+       background-color: #B0E2FF;
+   }
+   /* ................. */
+   .home_boxright_ke_hoachThi table th:nth-child(1){
+       width: 10%;
+       background-color:#D7D7D7; padding: 20px 80px;
+   }
+   .home_boxright_ke_hoachThi table th:nth-child(2){
+       width: 45%;
+       background-color:#D7D7D7;
+       padding: 20px 80px;
+   }
+       
+   .home_boxright_ke_hoachThi table th:nth-child(3){
+       width: 25%;
+       background-color:#D7D7D7;
+       padding: 20px 80px;
+   }
+    .home_boxright_ke_hoachThi table th:nth-child(3) a{
+       text-decoration: none;
+    }
+       
+   .home_boxright_ke_hoachThi table th:nth-child(3) div {
+       background-color: #1E90FF;
+       width: 150px;
+       height: 30px;
+       line-height: 30px;
+   }
+   
+   .home_boxright_ke_hoachThi i{
+       margin-right: 10px;
+   }
