@@ -90,3 +90,9 @@
     color: white;
     background-color: #17a2b8;
 }
+
+.error{
+    color: red;
+    font-style: italic;
+    font-size: 90%;
+}
