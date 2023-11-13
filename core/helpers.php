@@ -22,6 +22,35 @@ function loadLayout($path, $data = [])
 //         require_once _WEB_PATH_TEMPLATE . $dir . '/layouts/' . $layoutName . '.php';
 //     }
 // }
+function view($data = [], $action = '')
+{
+    $module = 'dashboard';
+    $action = 'home';
+    if (!empty($_GET['module'])) {
+        $module = $_GET['module'];
+    }
+
+    if (!empty($_GET['action'])) {
+        $action = $_GET['action'];
+    }
+
+    require_once './' . $module . '/view/' . $action . '.php';
+}
+
+function viewClient($data = [], $action = '')
+{
+    $module = 'home';
+    $action = 'home';
+    if (!empty($_GET['module'])) {
+        $module = $_GET['module'];
+    }
+
+    if (!empty($_GET['action'])) {
+        $action = $_GET['action'];
+    }
+
+    require_once './clients/' . $module . '/view/' . $action . '.php';
+}
 
 function sendMail($to, $subject, $content)
 {

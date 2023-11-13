@@ -17,9 +17,9 @@
             đó chọn phân tích để đọc dữ liệu </h4>
         <h4>Bước 3.Kiểm tra dữ liệu và bấm lưu(Quá trình lưu sẽ mất thời gian.Vui lòng không thoát trang.)</h4>
         </p> <br>
-        <div class="input_file">
-            <input type="file" name="" id="">
-            <h3><a href="">Xem trước</a></h3>
-        </div>
+        <form action="" method="post" enctype="multipart/form-data">
+            <input type="file" name="upload_file">
+            <button type="submit" class="btn btn-primary btn-sm">Đồng ý</button>
+        </form>
     </article>
 </section>

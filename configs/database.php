@@ -3,5 +3,5 @@ $config = [
     'host' => 'localhost',
     'user' => 'root',
     'pass' => '',
-    'db' => 'php_advanced',
+    'db' => 'fpoly_exam_tool',
 ];

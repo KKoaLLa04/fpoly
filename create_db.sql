@@ -4,8 +4,8 @@ CREATE TABLE `users` (
 	`name` VARCHAR(255) NOT NULL,
 	`is_admin` BOOLEAN NOT NULL DEFAULT '0',
 	`password` VARCHAR(255) NOT NULL,
-	`created_at` TIMESTAMP NOT NULL,
-	`updated_at` TIMESTAMP NOT NULL,
+	`created_at` TIMESTAMP  NULL,
+	`updated_at` TIMESTAMP  NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -13,8 +13,8 @@ CREATE TABLE `spring_blocks` (
 	`id` INT NOT NULL AUTO_INCREMENT UNIQUE,
 	`creator_id` INT NOT NULL,
 	`name` VARCHAR(255) NOT NULL,
-	`created_at` TIMESTAMP NOT NULL,
-	`updated_at` TIMESTAMP NOT NULL,
+	`created_at` TIMESTAMP  NULL,
+	`updated_at` TIMESTAMP  NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -22,8 +22,8 @@ CREATE TABLE `subjects` (
 	`id` INT NOT NULL AUTO_INCREMENT UNIQUE,
 	`creator_id` INT NOT NULL,
 	`name` VARCHAR(255) NOT NULL,
-	`created_at` TIMESTAMP NOT NULL,
-	`updated_at` TIMESTAMP NOT NULL,
+	`created_at` TIMESTAMP  NULL,
+	`updated_at` TIMESTAMP  NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -36,8 +36,8 @@ CREATE TABLE `examinations` (
 	`order` INT NOT NULL,
 	`room_code` VARCHAR(255) NOT NULL,
 	`class_code` VARCHAR(255) NOT NULL,
-	`created_at` TIMESTAMP NOT NULL,
-	`updated_at` TIMESTAMP NOT NULL,
+	`created_at` TIMESTAMP  NULL,
+	`updated_at` TIMESTAMP  NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -48,8 +48,8 @@ CREATE TABLE `subject_medias` (
 	`spring_block_id` INT NOT NULL,
 	`name` VARCHAR(255) NOT NULL,
 	`path_save` VARCHAR(255) NOT NULL,
-	`created_at` TIMESTAMP NOT NULL,
-	`updated_at` TIMESTAMP NOT NULL,
+	`created_at` TIMESTAMP  NULL,
+	`updated_at` TIMESTAMP  NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -58,8 +58,8 @@ CREATE TABLE `examination_medias` (
 	`creator_id` INT NOT NULL,
 	`examination_id` INT NOT NULL,
 	`subject_media_id` INT NOT NULL,
-	`created_at` TIMESTAMP NOT NULL,
-	`updated_at` TIMESTAMP NOT NULL,
+	`created_at` TIMESTAMP  NULL,
+	`updated_at` TIMESTAMP  NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -70,8 +70,8 @@ CREATE TABLE `examination_teachers` (
 	`examination_id` INT NOT NULL,
 	`teacher_code` VARCHAR(255) NOT NULL,
 	`order` INT NOT NULL,
-	`created_at` TIMESTAMP NOT NULL,
-	`updated_at` TIMESTAMP NOT NULL,
+	`created_at` TIMESTAMP  NULL,
+	`updated_at` TIMESTAMP  NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -80,8 +80,8 @@ CREATE TABLE `examination_histories` (
 	`download_id` INT NOT NULL,
 	`examination_id` INT NOT NULL,
 	`examination_media_id` INT NOT NULL,
-	`created_at` TIMESTAMP NOT NULL,
-	`updated_at` TIMESTAMP NOT NULL,
+	`created_at` TIMESTAMP  NULL,
+	`updated_at` TIMESTAMP  NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -118,12 +118,3 @@ ALTER TABLE `examination_histories` ADD CONSTRAINT `examination_histories_fk0` F
 ALTER TABLE `examination_histories` ADD CONSTRAINT `examination_histories_fk1` FOREIGN KEY (`examination_id`) REFERENCES `examinations`(`id`);
 
 ALTER TABLE `examination_histories` ADD CONSTRAINT `examination_histories_fk2` FOREIGN KEY (`examination_media_id`) REFERENCES `examination_medias`(`id`);
-
-
-
-
-
-
-
-
-

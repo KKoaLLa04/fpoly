@@ -10,7 +10,7 @@ try {
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ];
 
-    $con = new PDO($dsn, $config['user'], '', $options);
+    $conn = new PDO($dsn, $config['user'], '', $options);
 
     // self::$conn = $con;
 } catch (Exception $exception) {

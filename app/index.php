@@ -6,6 +6,9 @@ require_once '../configs/web.php'; // load config web
 require_once '../core/connection.php'; // load connection
 require_once '../core/database.php'; // load database
 require_once '../core/helpers.php'; // load all function (helpers)
+require_once '../core/session.php'; // load all function (helpers)
+
+require '../vendor/autoload.php';
 
 require_once '../public/assets/admin/templates/header.php'; //import header layout
 
@@ -20,7 +23,7 @@ if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 }
 
-$path =  $module . '/view/' . $action . '.php';
+$path =  $module . '/controller/' . $action . '.php';
 if (file_exists($path)) {
     require_once $path;
 } else {
