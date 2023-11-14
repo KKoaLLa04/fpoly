@@ -13,3 +13,10 @@ function getAllUser()
     $data = getRaw($sql);
     return $data;
 }
+
+function getSubjectDetail($id)
+{
+    $sql = "SELECT * FROM subjects WHERE id=$id";
+    $data = firstRaw($sql);
+    return $data;
+}

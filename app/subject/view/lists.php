@@ -1,7 +1,13 @@
+<?php
+$msg = getFlashData('msg');
+$msg_type = getFlashData('msg_type');
+?>
 <section class="home_boxcenter">
     <div class="container py-4">
-        <a href="?module=subject&action=add"><button class="btn btn-success">Thêm môn học mới <i class="fa fa-plus"></i></button></a>
+        <a href="?module=subject&action=add"><button class="btn btn-success">Thêm môn học mới <i
+                    class="fa fa-plus"></i></button></a>
         <hr>
+        <?php getMsg($msg,$msg_type) ?>
         <form action="" method="get">
             <div class="row">
                 <div class="col-4">
@@ -9,8 +15,8 @@
                         <option value="0">---Chọn người đăng---</option>
                         <?php if (!empty($data['users'])) :
                             foreach ($data['users'] as $key => $item) : ?>
-                                <option value="<?php echo $item['id'] ?>"><?php echo $item['name'] ?> -
-                                    (<?php echo $item['email'] ?>)</option>
+                        <option value="<?php echo $item['id'] ?>"><?php echo $item['name'] ?> -
+                            (<?php echo $item['email'] ?>)</option>
                         <?php endforeach;
                         endif; ?>
                     </select>
@@ -39,13 +45,16 @@
             <tbody>
                 <?php if (!empty($data['subject'])) :
                     foreach ($data['subject'] as $key => $item) : ?>
-                        <tr>
-                            <td><?php echo $key + 1 ?></td>
-                            <td><?php echo $item['name'] ?></td>
-                            <td><a href="#" style="text-decoration: none;"><?php echo $item['user_name'] ?></a></td>
-                            <td><a href="#"><button class="btn btn-warning"><i class="fa fa-edit"></i></button></a></td>
-                            <td><a href="#" onclick="return confirm('Are you sure?')"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a></td>
-                        </tr>
+                <tr>
+                    <td><?php echo $key + 1 ?></td>
+                    <td><?php echo $item['name'] ?></td>
+                    <td><a href="#" style="text-decoration: none;"><?php echo $item['user_name'] ?></a></td>
+                    <td><a href="?module=subject&action=edit&id=<?php echo $item['id'] ?>"><button
+                                class="btn btn-warning"><i class="fa fa-edit"></i></button></a></td>
+                    <td><a href="?module=subject&action=delete&id=<?php echo $item['id'] ?>"
+                            onclick="return confirm('Are you sure?')"><button class="btn btn-danger"><i
+                                    class="fa fa-trash"></i></button></a></td>
+                </tr>
                 <?php endforeach;
                 endif; ?>
             </tbody>
